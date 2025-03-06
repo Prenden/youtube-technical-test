@@ -54,6 +54,10 @@
         </div>
         }
       </mat-nav-list>
+
+      @if(!isMobile() && !isIconView()) {
+        <app-logged-in-area></app-logged-in-area>
+      }
     </mat-sidenav>
 
     <mat-sidenav-content>

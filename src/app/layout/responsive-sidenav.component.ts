@@ -9,6 +9,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MENU_ELEMENTS } from './consts';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { UserComponent } from './components/user/user.component';
+import { LoggedInAreaComponent } from './components/logged-in-area/logged-in-area.component';
 
 @Component({
   selector: 'app-responsive-sidenav',
@@ -21,6 +22,7 @@ import { UserComponent } from './components/user/user.component';
     MatListModule,
     SearchBarComponent,
     UserComponent,
+    LoggedInAreaComponent,
   ],
   templateUrl: './responsive-sidenav.component.html',
   styleUrl: './responsive-sidenav.component.scss',
