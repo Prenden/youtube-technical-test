@@ -1,3 +1,9 @@
-<div class="short-container">
-    <app-short></app-short>
+<div class="shorts-title">
+  <img src="assets/images/shorts_logo.jpg" alt="Short Logo" />
+  <h2>Shorts</h2>
+</div>
+<div class="shorts-container">
+  @for (short of shorts; track short.title) {
+    <app-short [short]="short"></app-short>
+  }
 </div>

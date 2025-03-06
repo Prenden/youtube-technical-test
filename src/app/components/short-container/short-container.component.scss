@@ -1,0 +1,19 @@
+.shorts-title {
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    margin-right: 12px;
+    border-radius: 16px;
+  }
+}
+
+.shorts-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 24px;
+}

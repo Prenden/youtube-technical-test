@@ -1,1 +1,6 @@
-<p>short.component works!</p>
+@if(short) {
+<div class="short-container">
+  <img [src]="short.img" [alt]="short.title" />
+  <h4>{{ short.title }}</h4>
+</div>
+}

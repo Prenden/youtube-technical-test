@@ -60,7 +60,7 @@ export class ResponsiveSidenavComponent implements OnDestroy {
     }
     this._tabletQuery.addEventListener('change', this._tabletQueryListener);
 
-    this._mobileQuery = media.matchMedia('(max-width: 430px)');
+    this._mobileQuery = media.matchMedia('(max-width: 500px)');
     this.isMobile.set(this._mobileQuery.matches);
     this._mobileQueryListener = () =>
       this.isMobile.set(this._mobileQuery.matches);
