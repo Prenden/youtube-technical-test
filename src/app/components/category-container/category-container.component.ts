@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatChipsModule } from '@angular/material/chips';
 import { CATEGORIES } from './consts';
@@ -14,4 +14,12 @@ import { MatIconModule } from '@angular/material/icon';
 export class CategoryContainerComponent {
   protected categories = CATEGORIES;
   protected selectedCategory = CATEGORIES[0];
+  @ViewChild('scrollableComponent', { static: false }) public scrollableComponent: ElementRef<HTMLElement> | undefined;
+
+  public scroll(): void {
+    if (this.scrollableComponent) {
+      const listbox = this.scrollableComponent.nativeElement.getElementsByTagName('mat-chip-listbox')[0];
+      listbox.scrollLeft += 100;
+    }
+  }
 }
