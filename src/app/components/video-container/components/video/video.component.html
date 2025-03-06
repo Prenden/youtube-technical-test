@@ -1,1 +1,26 @@
-<p>video works!</p>
+@if(video) {
+  <div class="video-container">
+    <div class="video-image">
+      <img src="{{ video.img }}" alt="{{ video.title }}">
+      <div class="video-duration">{{ video.duration }}</div>
+    </div>
+    <div class="video-description">
+      <div class="creator-image">
+        <img src="{{ video.creator.img }}" alt="{{ video.creator.name }}">
+      </div>
+      <div class="video-details">
+        <div class="video-title">{{ video.title }}</div>
+        <div class="creator-name">{{ video.creator.name }}</div>
+        <div class="video-meta">
+          <div class="views">{{ video.views }}</div> •
+          <div class="created-at">{{ video.createdAt }}</div>
+        </div>
+      </div>
+      <div class="video-actions">
+        <button mat-icon-button>
+          <mat-icon>more_vert</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+}

@@ -1,3 +1,5 @@
 <div class="video-container">
-    <app-video></app-video>
+  @for (video of videos; track video.title) {
+    <app-video [video]="video"></app-video>
+  }
 </div>

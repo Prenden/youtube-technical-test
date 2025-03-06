@@ -44,11 +44,10 @@
     }
 
     mat-sidenav-content {
-      padding: 16px 28px;
-
-      &.is-icon-view {
-        padding: 16px 6px;
-      }
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      margin: 4px 4px
     }
   }
 }
