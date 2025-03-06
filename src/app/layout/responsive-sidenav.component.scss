@@ -11,7 +11,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-left: 32px;
+    margin-left: 26px;
 
     div {
       display: flex;
@@ -25,44 +25,29 @@
     }
   }
 
+  &.is-mobile {
+    .toolbar {
+      margin-left: 0;
+      margin-top: 4px;
+    }
+  }
+
   mat-sidenav-container {
     mat-sidenav {
       max-width: 320px;
       padding-left: 38px;
 
-      mat-nav-list {
-        .menu-element {
-          .menu-item {
-            display: flex;
-            align-items: center;
-
-            mat-icon {
-              margin-right: 16px;
-            }
-          }
-        }
+      &.is-icon-view {
+        max-width: 120px;
+        padding-left: 0px;
       }
+    }
+
+    mat-sidenav-content {
+      padding: 16px 28px;
 
       &.is-icon-view {
-        max-width: 140px;
-        padding-left: 0px;
-
-        mat-nav-list {
-          .menu-element {
-            padding-top: 8px;
-            padding-bottom: 8px;
-
-            .menu-item {
-              flex-direction: column;
-              align-items: center;
-
-              mat-icon {
-                margin-right: 0;
-                margin-bottom: 4px;
-              }
-            }
-          }
-        }
+        padding: 16px 6px;
       }
     }
   }

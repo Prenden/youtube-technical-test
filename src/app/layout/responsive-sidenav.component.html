@@ -42,25 +42,17 @@
       [disableClose]="true"
       [class.is-icon-view]="isIconView()"
     >
-      <mat-nav-list>
-        @for (menuElement of menuElements; track menuElement.name) {
-        <div class="menu-element">
-          <a mat-list-item>
-            <div class="menu-item">
-              <mat-icon>{{ menuElement.icon }}</mat-icon>
-              <div>{{ menuElement.name }}</div>
-            </div>
-          </a>
-        </div>
-        }
-      </mat-nav-list>
+      <app-menu [menuElements]="menuElements" [isIconView]="isIconView()"></app-menu>
 
       @if(!isMobile() && !isIconView()) {
         <app-logged-in-area></app-logged-in-area>
+        <app-explore>
+          <app-menu [menuElements]="exploreMenuElements" [isIconView]="isIconView()"></app-menu>
+        </app-explore>
       }
     </mat-sidenav>
 
-    <mat-sidenav-content>
+    <mat-sidenav-content [class.is-icon-view]="!isMobile() && isIconView()">
       <ng-content></ng-content>
     </mat-sidenav-content>
   </mat-sidenav-container>

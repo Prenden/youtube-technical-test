@@ -1,0 +1,12 @@
+<mat-nav-list [class.is-icon-view]="isIconView">
+  @for (menuElement of menuElements; track menuElement.name) {
+  <div class="menu-element">
+    <a mat-list-item>
+      <div class="menu-item">
+        <mat-icon>{{ menuElement.icon }}</mat-icon>
+        <div>{{ menuElement.name }}</div>
+      </div>
+    </a>
+  </div>
+  }
+</mat-nav-list>

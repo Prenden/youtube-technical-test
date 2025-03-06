@@ -6,10 +6,12 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MENU_ELEMENTS } from './consts';
+import { EXPLORE_ELEMENTS, MENU_ELEMENTS } from './consts';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { UserComponent } from './components/user/user.component';
 import { LoggedInAreaComponent } from './components/logged-in-area/logged-in-area.component';
+import { ExploreComponent } from './components/explore/explore.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 @Component({
   selector: 'app-responsive-sidenav',
@@ -20,15 +22,18 @@ import { LoggedInAreaComponent } from './components/logged-in-area/logged-in-are
     MatIconModule,
     MatSidenavModule,
     MatListModule,
+    MenuComponent,
     SearchBarComponent,
     UserComponent,
     LoggedInAreaComponent,
+    ExploreComponent,
   ],
   templateUrl: './responsive-sidenav.component.html',
   styleUrl: './responsive-sidenav.component.scss',
 })
 export class ResponsiveSidenavComponent implements OnDestroy {
   protected readonly menuElements = MENU_ELEMENTS;
+  protected readonly exploreMenuElements = EXPLORE_ELEMENTS;
 
   protected readonly isIconView = signal(false);
   protected readonly isTablet = signal(true);
