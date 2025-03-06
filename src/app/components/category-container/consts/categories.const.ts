@@ -1,0 +1,15 @@
+export const CATEGORIES: string[] = [
+  'All',
+  'Airbus A380',
+  'Airplanes',
+  'Gaming',
+  'Music',
+  'Scale models',
+  'Stop Motion',
+  'Preschools',
+  'Live',
+  'Grand Theft Auto Online',
+  'Rolling stock',
+  'Simulations',
+  'Home improvements',
+];

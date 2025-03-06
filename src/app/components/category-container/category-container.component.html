@@ -1,0 +1,17 @@
+<div class="category-container">
+  <mat-chip-listbox
+    aria-label="category selector"
+    [hideSingleSelectionIndicator]="true"
+  >
+    @for (category of categories; track category) {
+    <mat-chip-option
+      [color]="'primary'"
+      [selected]="selectedCategory === category"
+      >{{ category }}</mat-chip-option
+    >
+    }
+  </mat-chip-listbox>
+  <button mat-icon-button class="slider">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
+</div>

@@ -1,0 +1,30 @@
+.category-container {
+  position: relative;
+  mat-chip-listbox {
+    position: relative;
+    overflow-x: auto;
+    --mdc-chip-outline-color: transparent;
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+    max-width: calc(100% - 40px);
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    ::ng-deep .mdc-evolution-chip-set__chips {
+      flex-flow: nowrap;
+    }
+
+    .mdc-evolution-chip--selected:not(.mdc-evolution-chip--disabled) {
+      --mdc-chip-elevated-selected-container-color: black;
+      --mdc-chip-selected-label-text-color: white;
+    }
+  }
+
+  .slider {
+    position: absolute;
+    right: -8px;
+    top: 0;
+  }
+}
