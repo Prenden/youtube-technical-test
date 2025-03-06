@@ -1,0 +1,63 @@
+<div
+  class="responsive-sidenav-container"
+  [class.is-tablet]="isTablet()"
+  [class.is-mobile]="isMobile()"
+>
+  <mat-toolbar class="toolbar">
+    <div class="left-container">
+      @if (isMobile()) {
+      <button mat-icon-button>
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      } @else {
+      <button mat-icon-button class="menu-icon" (click)="toggleIconView()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <img src="assets/images/youtube.jpg" alt="YouTube" height="48px" />
+      }
+    </div>
+    <div class="center-container">
+      <app-search-bar></app-search-bar>
+      <button mat-icon-button>
+        <mat-icon>microphone</mat-icon>
+      </button>
+    </div>
+
+    @if(!isMobile()) {
+    <div class="right-container">
+      <button mat-icon-button>
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <app-user></app-user>
+    </div>
+    }
+  </mat-toolbar>
+
+  <mat-sidenav-container [autosize]="true" class="sidenav-container">
+    <mat-sidenav
+      [mode]="isMobile() ? 'over' : 'side'"
+      [fixedInViewport]="true"
+      fixedTopGap="56"
+      [opened]="!isMobile()"
+      [disableClose]="true"
+      [class.is-icon-view]="isIconView()"
+    >
+      <mat-nav-list>
+        @for (menuElement of menuElements; track menuElement.name) {
+        <div class="menu-element">
+          <a mat-list-item>
+            <div class="menu-item">
+              <mat-icon>{{ menuElement.icon }}</mat-icon>
+              <div>{{ menuElement.name }}</div>
+            </div>
+          </a>
+        </div>
+        }
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <ng-content></ng-content>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

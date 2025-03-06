@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { VideoComponent } from './components/video.component';
+import { ResponsiveSidenavComponent } from './layout/responsive-sidenav.component';
 
 @Component({
-  imports: [NxWelcomeComponent, RouterModule],
+  imports: [RouterModule, ResponsiveSidenavComponent, VideoComponent],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  title = 'youtube-technical-test';
-}
+export class AppComponent {}
